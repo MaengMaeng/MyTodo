@@ -1,2 +1,2 @@
-export {Done} from './Done';
-export {Todo} from './Todo';
+export {DoneScreen} from './Done';
+export {TodoScreen} from './Todo';

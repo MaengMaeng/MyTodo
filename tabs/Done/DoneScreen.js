@@ -1,11 +1,28 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import { DONE_BLACK_ICON } from '../../assets/tabs';
 
-const Done = () => {
+
+const Stack = createStackNavigator();
+
+const DoneScreen = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name='Done'
+        component={Container}
+        options={{
+          title: 'Done'
+        }}
+      />
+  </Stack.Navigator>
+  )
+}
+
+const Container = () => {
   return (
     <View style={styles.container}>
       <Image
@@ -30,4 +47,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Done;
+export default DoneScreen;
