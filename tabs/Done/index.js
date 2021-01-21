@@ -1,1 +1,1 @@
-export {default as Done} from './Done';
+export {default as DoneScreen} from './DoneScreen';

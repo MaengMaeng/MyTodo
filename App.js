@@ -1,10 +1,9 @@
 import React from 'react';
 import { Image } from 'react-native';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Todo, Done } from './tabs';
+import { TodoScreen, DoneScreen } from './tabs';
 import { TODO_BLUE_ICON, TODO_GREY_ICON, DONE_BLUE_ICON, DONE_GREY_ICON } from './assets/tabs';
 
 const Tab = createBottomTabNavigator();
@@ -12,7 +11,7 @@ const Tab = createBottomTabNavigator();
 const routes = [
   {
     name: 'Todo',
-    component: Todo,
+    component: TodoScreen,
     icons: {
       active: TODO_BLUE_ICON,
       inactive: TODO_GREY_ICON
@@ -20,7 +19,7 @@ const routes = [
   },
   {
     name: 'Done',
-    component: Done,
+    component: DoneScreen,
     icons: {
       active: DONE_BLUE_ICON,
       inactive: DONE_GREY_ICON
@@ -28,7 +27,7 @@ const routes = [
   }
 ]
 
-export default function App() {
+const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
@@ -58,3 +57,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+export default App;

@@ -1,11 +1,27 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import { TODO_BLACK_ICON } from '../../assets/tabs';
 
-const Todo = () => {
+const Stack = createStackNavigator();
+
+const TodoScreen = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name='Todo'
+        component={Container}
+        options={{
+          title: 'Todo'
+        }}
+      />
+  </Stack.Navigator>
+  )
+}
+
+const Container = () => {
   return (
     <View style={styles.container}>
       <Image
@@ -30,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Todo;
+export default TodoScreen;
